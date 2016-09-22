@@ -12,5 +12,5 @@ while True:
             a=c
         print c
         
-        if  f(c) ==0://error en la condicion del ciclo por resolver//
+        if  f(c) ==0 or math.fabs(a-b)> tol:
                 break
