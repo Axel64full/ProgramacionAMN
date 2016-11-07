@@ -1,24 +1,97 @@
-#include<iostream>
+//calculadora orientada a objetos en c++ //
+#include<iostream> 
 #include<stdlib.h>
 using namespace std;
-class SUMA
+class GUARDAR
 {
 public:
-int a, b, c;
-void operacion(void)
+float a, b, c;
+void guard(void)
 {
 system("color 1A");
-cout<<"ingrese primer numero a sumar\n";
+cout<<"ingrese primer numero\n";
 cin>>a;
-cout<<"ingrese segundo numero asumar\n";
+cout<<"ingrese segundo numero\n";
 cin>>b;
-c=a+b;
-cout<<"el resultado es;\n";
-cout<<a+b<<endl;
+system("cls");
+}
+
+void suma(void)
+{
+	cout<<"Tu suma es:\n";
+	cout<<a+b<<endl;
+}
+void resta(void)
+{
+		cout<<"Tu resta es:\n";
+	cout<<a-b<<endl;
+}
+void multiplicacion(void)
+{
+		cout<<"Tu multiplicacion es: \n";
+	cout<<a*b<<endl;
+}
+void divicion(void)
+{
+	if (b==0)
+	{
+		cout<< "lo siento mi logica no me permite esta operacion \n";
+		GUARDAR total;
+		total.guard();
+   }
+	else 
+	{
+		cout<<"Tu divicion  es: \n ";
+		cout<<a/b<<endl;
+    }
 }
 };
+
 int main()
 {
-SUMA total;
-total.operacion();
+	GUARDAR total;
+	int d;
+	system("color 1A");
+	cout<<"Que desea hacer ?";
+	cout<<"\n";
+	cout<<" 1.- Sumar";
+	cout<<"\n";
+	cout<<" 2.- Restar";
+	cout<<"\n";
+	cout<<" 3.- Multiplicar";
+	cout<<"\n";
+	cout<<" 4.- Dividir";
+	cout<<"\n";
+	cin>>d;
+	switch (d)
+	{
+	case 1 :  
+        total.guard();
+		total.suma();
+            break;  
+    case 2 :  
+        total.guard();
+		total.resta(); 
+            break;  
+    case 3 :  
+        total.guard();
+		total.multiplicacion(); 
+		 break; 
+    case 4 :  
+        total.guard();
+		total.divicion(); 
+            break;  
+    }
+    cout<<"Desea realizar alguna otra operacion \n 1.- Si \n 2.-NO     ";
+	d=0;
+	cin>>d;
+	if (d==1)
+	{
+		return main();
+		system("cls");
+	}
+	else
+	{
+		exit(0);
+	}
 }
